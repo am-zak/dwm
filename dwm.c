@@ -570,8 +570,7 @@ buttonpress(XEvent *e)
 					dwmblockssig = ch;
 				}
 			}
-		} else
-			click = ClkWinTitle;
+		}
 	} else if ((c = wintoclient(ev->window))) {
 		focus(c);
 		restack(selmon);
