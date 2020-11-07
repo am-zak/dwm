@@ -11,7 +11,7 @@ static int smartgaps          = 0;        /* 1 means no outer gap when there is 
 static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]          = {
+static const char *fonts[]          = {
     "monospace:size=10",
     "Hack Nerd Font:pixelsize=14:antialias=true:autohint=true",
     "Noto Color Emoji:pixelsize=14:antialias=true:autohint=true",
