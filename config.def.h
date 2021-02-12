@@ -1,21 +1,21 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static unsigned int borderpx  = 1;        /* border pixel of windows */
+static unsigned int borderpx  = 5;        /* border pixel of windows */
 static unsigned int snap      = 32;       /* snap pixel */
 static unsigned int gappih    = 20;       /* horiz inner gap between windows */
 static unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
-static unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
+static unsigned int gappov    = 20;       /* vert outer gap between windows and screen edge */
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {
-    "monospace:size=10",
-    "Hack Nerd Font:pixelsize=14:antialias=true:autohint=true",
-    "Noto Color Emoji:pixelsize=14:antialias=true:autohint=true",
-    "JoyPixels:pixelsize=12:antialias=true:autohint=true"
+    "monospace:size=12",
+    "Hack Nerd Font:pixelsize=16:antialias=true:autohint=true",
+    "Noto Color Emoji:pixelsize=16:antialias=true:autohint=true",
+    "JoyPixels:pixelsize=16:antialias=true:autohint=true"
 };
 static const char dmenufont[]       = "monospace:size=10";
 static char normbgcolor[]           = "#222222";
@@ -49,27 +49,27 @@ static const Rule rules[] = {
 /* layout(s) */
 static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static int nmaster     = 1;    /* number of clients in master area */
-static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
+	{ "[ ]",      tile },    /* first entry is default */
 	{ "[M]",      monocle },
-	{ "[@]",      spiral },
 	{ "[\\]",     dwindle },
-	{ "H[]",      deck },
-	{ "TTT",      bstack },
-	{ "===",      bstackhoriz },
-	{ "HHH",      grid },
-	{ "###",      nrowgrid },
-	{ "---",      horizgrid },
-	{ ":::",      gaplessgrid },
-	{ "|M|",      centeredmaster },
-	{ ">M>",      centeredfloatingmaster },
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[@]",      spiral },
+	{ "[T]",      bstack },
+	{ "[H]",      deck },
+	{ "[=]",      bstackhoriz },
+	{ "[H]",      grid },
+	{ "[#]",      nrowgrid },
+	{ "[-]",      horizgrid },
+	{ "[:]",      gaplessgrid },
+	{ "[CM]",     centeredmaster },
+	{ "[>M]",     centeredfloatingmaster },
+	{ "<>",       NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
 };
 
@@ -144,9 +144,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ShiftMask,             XK_v,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
-	{ MODKEY|ControlMask,		XK_comma,  cyclelayout,    {.i = -1 } },
-	{ MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
+	{ MODKEY|ControlMask,		    XK_j,      cyclelayout,    {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_k,      cyclelayout,    {.i = +1 } },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
@@ -156,15 +157,15 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	TAGKEYS(			0x26,		0)
-	TAGKEYS(			0xe9,		1)
-	TAGKEYS(			0x22,		2)
-	TAGKEYS(			0X27,		3)
-	TAGKEYS(			0x28,		4)
-	TAGKEYS(			0x2d,		5)
-	TAGKEYS(			0xe8,		6)
-	TAGKEYS(			0x5f,		7)
-	TAGKEYS(			0xe7,		8)
+	TAGKEYS(			            0x26,		0)
+	TAGKEYS(			            0xe9,		1)
+	TAGKEYS(			            0x22,		2)
+	TAGKEYS(			            0X27,		3)
+	TAGKEYS(			            0x28,		4)
+	TAGKEYS(			            0x2d,		5)
+	TAGKEYS(			            0xe8,		6)
+	TAGKEYS(			            0x5f,		7)
+	TAGKEYS(			            0xe7,		8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
