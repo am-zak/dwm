@@ -57,11 +57,12 @@ static int resizehints = 0;    /* 1 means respect size hints in tiled resizals *
 
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
-
+#include "tatami.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[ ]",      tile },    /* first entry is default */
 	{ "[M]",      monocle },
+	{ "|+|",      tatami },
 	{ "[\\]",     dwindle },
 	{ "[T]",      bstack },
 	{ "[@]",      spiral },
@@ -144,11 +145,13 @@ static Key keys[] = {
 	{ MODKEY|Mod1Mask,              XK_a,      togglegaps,     {0} },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_a,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
+<<<<<<< HEAD
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_v,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY|ShiftMask,             XK_y,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
 	{ MODKEY|ControlMask,		    XK_k,      cyclelayout,    {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_j,      cyclelayout,    {.i = +1 } },
