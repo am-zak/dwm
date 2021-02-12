@@ -61,11 +61,11 @@ static int resizehints = 0;    /* 1 means respect size hints in tiled resizals *
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[ ]",      tile },    /* first entry is default */
-	{ "[M]",      monocle },
 	{ "|+|",      tatami },
 	{ "[\\]",     dwindle },
-	{ "[T]",      bstack },
 	{ "[@]",      spiral },
+	{ "[T]",      bstack },
+	{ "[M]",      monocle },
 	{ "[H]",      deck },
 	{ "[=]",      bstackhoriz },
 	{ "[H]",      grid },
@@ -145,7 +145,6 @@ static Key keys[] = {
 	{ MODKEY|Mod1Mask,              XK_a,      togglegaps,     {0} },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_a,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-<<<<<<< HEAD
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
