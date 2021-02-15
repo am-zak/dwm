@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static unsigned int borderpx  = 5;        /* border pixel of windows */
+static unsigned int borderpx  = 3;        /* border pixel of windows */
 static unsigned int snap      = 32;       /* snap pixel */
 static unsigned int gappih    = 20;       /* horiz inner gap between windows */
 static unsigned int gappiv    = 10;       /* vert inner gap between windows */
@@ -12,7 +12,7 @@ static int swallowfloating    = 0;        /* 1 means swallow floating windows by
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[] = {
-    "monospace:size=11",
+    "monospace:size=10",
     "Hack Nerd Font:pixelsize=14:antialias=true:autohint=true",
     "Noto Color Emoji:pixelsize=14:antialias=true:autohint=true",
     "JoyPixels:pixelsize=14:antialias=true:autohint=true"
